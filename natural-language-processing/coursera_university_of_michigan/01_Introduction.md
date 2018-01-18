@@ -2,7 +2,7 @@
 
 Natural Language Processing (NLP) is the study of the computational treatment of natural (human) language.
 
-In other words, teaching computers how to understand 
+In other words, teaching computers how to understand (and generate) human language.
 
 NLP draws on research in Linguistics, Theoretical Computer Science, Mathematics, Statistics, Artificial Intelligence, Psycology, Databases, etc.
 
@@ -21,4 +21,7 @@ NLP draws on research in Linguistics, Theoretical Computer Science, Mathematics,
 
 ## Basic NLP Pipeline
 
-![NLP Pipeline](01_basic_nlp_pipeline.png)
+![NLP Pipeline](01_basic_nlp_pipeline.PNG)
+
+
+[Next](01_examples_of_text.md)
