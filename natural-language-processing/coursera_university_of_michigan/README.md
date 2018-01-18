@@ -4,4 +4,4 @@ YouTube Link [here](https://www.youtube.com/playlist?list=PLLssT5z_DsK8BdawOVCCa
 
 Session by Dragomir Radev
 
-1. [01 Introduction](01_Introduction.md)
+1. [01 Introduction](01/01_Introduction.md)

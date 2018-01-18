@@ -24,4 +24,4 @@ NLP draws on research in Linguistics, Theoretical Computer Science, Mathematics,
 ![NLP Pipeline](01_basic_nlp_pipeline.PNG)
 
 
-[Next](01_examples_of_text.md)
+[Next](01_02_examples_of_text.md)

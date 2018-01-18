@@ -19,3 +19,5 @@
 * Poetry is also difficult to understand
   - In addition to the constraints that posed by language, there is another constraint posed by the structure.
 * Each presents different challenges to NLP
+
+[Next](01_03_funny_sentences.md)
