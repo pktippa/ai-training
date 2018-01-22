@@ -46,4 +46,4 @@ Sentences are literal but sometimes those can be funny.
 *For an employee who is not worth further consideration as a job candidate | I would urge you to waste no time in making this candidate an offer of employment.
 * For a stupid employee | There is nothing you can teach a man like him.
 
-[Next](01_05_why_nlp_is_hard.md)
+Next [Why NLP is Hard](01_05_why_nlp_is_hard.md)
