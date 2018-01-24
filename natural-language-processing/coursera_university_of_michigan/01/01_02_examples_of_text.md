@@ -20,4 +20,6 @@
   - In addition to the constraints that posed by language, there is another constraint posed by the structure.
 * Each presents different challenges to NLP
 
+[YouTube Video](https://www.youtube.com/watch?v=n25JjoixM3I)
+
 Next [Funny Sentences](01_03_funny_sentences.md)

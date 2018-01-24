@@ -179,5 +179,6 @@ Synonyms refers to words that have similar senses and Paraphrases refers to phra
 
 The three `words` on `left` are `synonyms` and the three `phrases` on `right` are `paraphrases`
 
+[YouTube Video](https://www.youtube.com/watch?v=NHtohvD7gxY)
 
 Next [Background](01_06_background.md)
