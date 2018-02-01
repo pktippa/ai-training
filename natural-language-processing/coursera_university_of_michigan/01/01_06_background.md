@@ -1,5 +1,7 @@
 # Background
 
+[YouTube Video](https://www.youtube.com/watch?v=0X-n4Z1U9wI)
+
 ## Linguistic Knowledge
 
 * **Constituents**: `Constituent` - it is a unit of the syntax of a sentence that has a specific whole. Ex: below
@@ -53,6 +55,6 @@ Followed by a few `empty strings`, followed by a capital `N` and capital `P` whi
 
 TODO
 
-[YouTube Video](https://www.youtube.com/watch?v=0X-n4Z1U9wI)
 
-Next [Linguistics](01_07_Linguistics.md)
+
+Next [Background 2](01_06_02_Background.md) 
