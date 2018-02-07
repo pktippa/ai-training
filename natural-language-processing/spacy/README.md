@@ -57,3 +57,7 @@ for token1 in tokens:
     for token2 in tokens:
         print(token1.similarity(token2))
 ```
+
+TODO: More from spacy-101, is pending
+
+* [Linguistic Feautres](linguistic_feautures.md)
