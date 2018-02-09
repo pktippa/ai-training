@@ -21,3 +21,13 @@ for chunk in doc.noun_chunks:
     print(chunk.text, chunk.root.text, chunk.root.dep_,
           chunk.root.head.text)
 ```
+
+TODO: till Tokenization, see the ipynb
+
+https://spacy.io/usage/linguistic-features#how-tokenizer-works
+
+TODO: Documentation contribution, add steps for suffix case algorithm summarization
+
+## Hooking an arbitrary tokenizer into the pipeline
+
+The tokenizer is the first component of the processing pipeline and the only one that can't be replaced by writing to `nlp.pipeline`. This is because it has a different signature from all the other components: it takes a text and returns a `Doc`, whereas all other components expect to already receive a tokenized `Doc`.
