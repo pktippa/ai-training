@@ -30,3 +30,4 @@ www.nltk.org
 It is used to analyze the natural language in python. It is collection of Python modules and data sets that implement natural language processing techniques.
 
 * Working on Word Count, see [Counting](Counting.ipynb)
+* Average Words per sentence, per Year and plotting [here](Example_Words_Per_Sentence_Trends.ipynb)
