@@ -31,3 +31,6 @@ It is used to analyze the natural language in python. It is collection of Python
 
 * Working on Word Count, see [Counting](Counting.ipynb)
 * Average Words per sentence, per Year and plotting [here](Example_Words_Per_Sentence_Trends.ipynb)
+* Frequency Distribution of Words [here](Frequency_Distribution.ipynb)
+* Conditional Frequency Distribution of Words [here](Conditional_Frequency_Distribution.ipynb)
+* Informative words by Example [here](Informative_Words_Example.ipynb)
