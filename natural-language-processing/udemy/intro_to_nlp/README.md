@@ -34,3 +34,5 @@ It is used to analyze the natural language in python. It is collection of Python
 * Frequency Distribution of Words [here](Frequency_Distribution.ipynb)
 * Conditional Frequency Distribution of Words [here](Conditional_Frequency_Distribution.ipynb)
 * Informative words by Example [here](Informative_Words_Example.ipynb)
+* Bigrams, Trigrams, Ngrams [here](Bigrams_trigrams_ngrams.ipynb)
+* Tokenization [here](Tokenization.ipynb)
