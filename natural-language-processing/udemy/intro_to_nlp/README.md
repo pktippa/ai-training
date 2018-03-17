@@ -17,11 +17,17 @@ $ conda create -y -n udemy_nlp python=3.6 anaconda
 $ source activate udemy_nlp
 ```
 
-* Installing Packages
+* Installing Dependencies
+  * Python packages
 
-```sh
-$ pip install -r requirements.txt
-```
+    ```sh
+    $ pip install -r requirements.txt
+    ```
+  * NLTK required downloads
+
+    ```sh
+    $ python nltk_downloads.py
+    ```
 
 ## NLTK - Natural Language Toolkit
 
@@ -36,3 +42,4 @@ It is used to analyze the natural language in python. It is collection of Python
 * Informative words by Example [here](Informative_Words_Example.ipynb)
 * Bigrams, Trigrams, Ngrams [here](Bigrams_trigrams_ngrams.ipynb)
 * Tokenization [here](Tokenization.ipynb)
+* Normalizing [here](Normalizing.ipynb)
