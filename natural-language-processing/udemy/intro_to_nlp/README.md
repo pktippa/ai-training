@@ -43,3 +43,4 @@ It is used to analyze the natural language in python. It is collection of Python
 * Bigrams, Trigrams, Ngrams [here](Bigrams_trigrams_ngrams.ipynb)
 * Tokenization [here](Tokenization.ipynb)
 * Normalizing [here](Normalizing.ipynb)
+* Parts of Speech [here](09_Parts_of_Speech.ipynb)
