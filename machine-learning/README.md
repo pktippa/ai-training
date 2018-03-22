@@ -1,4 +1,6 @@
 # Machine Learning
 
-1. [Deep Learning](deep-learning/README.md)
-2. [TensorFlow](tensorflow/README.md)
+* [Coursera](coursera.md)
+* [Deep Learning](deep-learning/README.md)
+* [TensorFlow](tensorflow/README.md)
+* [ML Problem Solving Steps](ML_steps.md)
