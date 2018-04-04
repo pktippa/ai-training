@@ -8,4 +8,8 @@ It is an iterative mathematical process that uses a set of equations and consecu
 
 Kalman Filter work on [Gaussian or Normal Distribution](https://github.com/pktippa/learning/blob/master/statistics/README.md).
 
+It is a two step iterative process
+1. Predict
+2. Update
+
 TODO - need to complete the full understanding.
