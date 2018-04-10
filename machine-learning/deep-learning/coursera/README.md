@@ -10,3 +10,21 @@ Other Important Subjects to consider:
 2. Calculus
     1. Derivatives
     2. Partial Derivatives
+
+* Logistic Regression
+* Gradient Descent
+* [Vectorization](01_Vectorization_demo.ipynb)
+
+## Getting Started
+
+```sh
+$ conda create -y -n coursera_dl python=3.6.4 anaconda
+```
+
+```sh
+$ source activate coursera_dl
+```
+
+```sh
+$ pip install -r requirements.txt
+```
