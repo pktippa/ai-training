@@ -15,6 +15,8 @@ Other Important Subjects to consider:
 * Gradient Descent
 * [Vectorization](01_Vectorization_demo.ipynb)
 
+* SIMD - Single Instruction Multiple Data to run the processor in parallel.
+
 ## Getting Started
 
 ```sh
@@ -27,4 +29,8 @@ $ source activate coursera_dl
 
 ```sh
 $ pip install -r requirements.txt
+```
+
+```sh
+$ jupyter notebook
 ```
