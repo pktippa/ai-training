@@ -1,0 +1,1 @@
+* Why We have to call the function as hypothesis?
