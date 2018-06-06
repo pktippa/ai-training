@@ -1,5 +1,15 @@
 # All Algorithms
 
+## Linear Regression
+
+The cost function for linear regression is always a bowl shaped or convex shaped function.
+
+So it always has a global optimum but not a local optimum.
+
+## Linear Regression with Multiple variables
+
+Linear regression with multiple variables is also known as "multivariate linear regression".
+
 ## Logistic Regression
 
 It is algorithm for Binary Classification.
