@@ -13,7 +13,7 @@ X = inp[0].values
 y = inp[1].values
 
 # Calling plot in plotData.py file
-plot(X, y)
+#plot(X, y)
 # Getting number of training examples
 m = len(X)
 
@@ -31,7 +31,14 @@ print(column_ones.shape, X.shape, y.shape)
 X = np.concatenate((column_ones, X), axis=1)
 
 # Iniatilizing theta vector with all zeros
-theta = np.zeros((m, 1))
+theta = np.zeros((2, 1))
 
 # Calling computeCost in cost.py file
-computeCost(X, y, theta)
+calculatedCost = computeCost(X, y, theta)
+
+print('Cost Calculated ', calculatedCost, ' vs the expected cost', 32.07)
+
+# Further testing of cost function
+theta = np.array([[-1],[2]])
+calculatedCost = computeCost(X, y, theta)
+print('Cost Calculated ', calculatedCost, ' vs the expected cost', 54.24)
