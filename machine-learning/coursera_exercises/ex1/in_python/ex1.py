@@ -1,8 +1,11 @@
 from exercises import warmUpExercise
 from exercises.plotData import plot 
 from exercises.cost import computeCost
+from exercises.gradientDescent import doGD
 import pandas as pd
 import numpy as np
+import matplotlib.pyplot as plt
+
 print('Printing the Identitiy Matrix')
 
 identitiy_matx = warmUpExercise.get5by5IdentityMatrix()
@@ -42,3 +45,24 @@ print('Cost Calculated ', calculatedCost, ' vs the expected cost', 32.07)
 theta = np.array([[-1],[2]])
 calculatedCost = computeCost(X, y, theta)
 print('Cost Calculated ', calculatedCost, ' vs the expected cost', 54.24)
+
+# Gradient Descent Settings
+iterations = 1500
+alpha = 0.01
+
+theta = np.zeros((2, 1))
+
+theta, J_history = doGD(X, y, theta, alpha, iterations)
+
+print('Theta found', theta)
+print('Expected theta values (approx)\n')
+print(' -3.6303\n  1.1664\n\n')
+
+# Now plotting the hypothesis function
+hypothesis = np.matmul(X, theta)
+print('shape hypothesis', hypothesis.shape)
+# Getting the second column from the X feature values by excluding the 1s column vector
+# Note: but the shape is (97,) but no (97,1)
+plt.plot(X[:,1], hypothesis)
+# Calling the scatter plot to overlay the hypothesis line graph.
+plot(X[:,1], y)
