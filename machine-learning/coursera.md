@@ -131,3 +131,84 @@ theta = (X`X)^-1 * (X`)* y, where X` is X transpose
 The cost of calculating inverse for n dimensions is O(n^3)
 
 Normal equation method does not fit for Classification problems, it is more suitable for linear equation with number of features >= 10,000
+
+Classification to 0 or 1:
+0 - Negative class - specifying non presence of something - Not Spam - Benign
+1 - Positive Class - Specifying presence of something - Spam - Malignant
+
+Trying to apply a linear regression to classification problem isnt a good idea.
+Lets say first the hypothesis going through middle of points, with some angle from x axis
+Resulting in lets say if the value is >=0.5 it is Positive (1), or <0.5 it is Negative (0)
+Now if we add another point to the right far from the current dataset, the line moves in the direction
+reducing the angle towards the X axis, resulting in the threshold value meeting the line in 
+towards the right direction, making some of the positive examples marking as negative.
+
+h_theta(x) = estimated probability that y=1 on input x
+
+Ex: h_theta(x) = 0.7, i.e 70% probability that the tumor is a malignant
+
+h_theta(x) = P(y=1 | x;theta) Probability for y=1 given x and parameterized theta
+
+Decision boundary
+
+it the curve/line which separately the positive and negative classes
+i.e for y =0 , y =1 when we plot the graph for features
+with identified theta values.
+
+i.e. h_theta(x) = g(theta_trans * X ) 
+
+here theta_trans * X = 0 is the line or curve which separates the positive and negative classes
+
+this is the property of hypothesis even with the training samples plotted on graph.
+
+Ex: -3 * x1 + 2 * x2 = 0 is a line
+
+
+Understand Maximum likelyhood of estimation.
+
+For multi class classification problem we use one-vs-all classification
+
+one-vs-all : For mutiple calsses lets say triangles, sqaures, crosses. We divide this into 3 binary
+classification problems
+1. take triangles as positive class, then convert squares, crosses into circles which is a negative class
+calculate h_theta_1(x)
+2. take squares as positive class, then convert trianges, crosses into circles which is a negative class
+calcuate h_theta_2(x)
+3. take crosses as positive class, then convert triangles, squares into circles which is a negative classs
+calculate h_theta_3(x)
+
+For prediction, take max of h_theta_1, h_theta_2, h_theta_3
+
+For Fixing overfitting we use regularization
+
+Underfitting also called High Bias.
+
+Overfit also called "high Variance"
+
+Regularization:
+
+We will penalize heavily for the theta parameters for the the features are making overfitting of data.
+
+Lets say a higher order polynomial function is chosen to fit the data as hypothesis
+
+h_theta(x) = theta_0 + theta_1 * x + theta_2 * x^2 + theta_3 * x^3 + theta_4 * x^4
+
+For cost J
+
+J(theta) = (1/2m) Sigsum[ (h_theta(x) - y )^2 ]
+
+modify to penalizing the theta_3 and theta_4
+
+J(theta) = (1/2m) Sigsum[ (h_theta(x) - y )^2 + theta_3^2 * 1000 + theta_4^2 * 1000 ]
+
+Resulting which the theta_3 and theta_4 should be very very small i.e. near to 0
+
+resulting in the hypothesis function has less effect with theta_3 and theta_4, so h(x) becomes
+
+h_theta(x) = theta_0 + theta_1 * x + theta_2 * x^2
+
+For regularizing all the parameters of theta (Observe m and n)
+
+min_theta (1/2m) Sigsum_1_to_m [ (h_theta(x) - y)^2 ] + lambda * Sigsum_1_to_n [ theta_j ^2 ]
+
+last term is regularization term and lambda is regularization parameter.
