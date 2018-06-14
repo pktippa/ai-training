@@ -1,5 +1,7 @@
 from exercises.plotData import plot
+from exercises.costFunction import getCost
 import pandas as pd
+import numpy as np
 
 inp = pd.read_csv('../ex2data1.txt', header=None)
 
@@ -12,3 +14,20 @@ m = len(y_df)
 y = y_df.reshape((m, 1))
 
 plot(X, y)
+
+(m, n) = X.shape
+
+# the intercept vector
+column_ones = np.ones((m, 1))
+# Adding the intercept one's for theta0
+X = np.concatenate((column_ones, X), axis=1)
+
+
+initial_theta = np.zeros((n+1, 1))
+(cost_J, gradient) = getCost(X, y, initial_theta)
+
+print('Cost at initial theta (zeros):\n', cost_J)
+print('Expected cost (approx): 0.693\n')
+print('Gradient at initial theta (zeros): \n')
+print(gradient)
+print('Expected gradients (approx):\n -0.1000\n -12.0092\n -11.2628\n')

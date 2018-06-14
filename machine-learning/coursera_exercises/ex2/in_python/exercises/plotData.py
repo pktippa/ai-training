@@ -6,7 +6,7 @@ def plot(X, y):
     negative_indices = np.where(y == 0)
     # Number of samples
     m = len(X)
-    print('X', X)
+    #print('X', X)
     X1_pos = X[:,0]
     X1_pos = X1_pos.reshape((m, 1))
     X1_pos = X1_pos[positive_indices]
