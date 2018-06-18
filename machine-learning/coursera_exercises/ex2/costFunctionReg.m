@@ -19,7 +19,15 @@ grad = zeros(size(theta));
 
 
 
+X_x_theta = X * theta;
+h_theta = sigmoid(X_x_theta);
+log_h = log(h_theta);
+log_1_h = log( 1 - h_theta );
 
+J = (-1/m) * (log_h' * y + log_1_h' * (1-y)) + (lambda / (2 * m)) * (theta' * theta - theta(1) ** 2) ;
+funny_mat = eye(length(theta));
+funny_mat(1,1) = 0;
+grad = (1 / m) * ( X' * (h_theta - y) + lambda * (funny_mat * theta));
 
 
 % =============================================================
