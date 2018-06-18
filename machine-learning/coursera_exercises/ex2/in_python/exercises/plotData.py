@@ -28,4 +28,4 @@ def plot(X, y):
     plt.xlabel('Exam 1 Score')
     plt.ylabel('Exam 2 Score')
 
-    plt.show()
+    return plt
