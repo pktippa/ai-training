@@ -17,6 +17,11 @@ y = y_df.reshape((m, 1))
 
 # Plotting data
 plt = plot(X_org, y)
+# Labelling the markers
+plt.legend(['Admitted', 'Not Admitted'])
+# Labelling Axes
+plt.xlabel('Exam 1 Score')
+plt.ylabel('Exam 2 Score')
 plt.show()
 
 (m, n) = X_org.shape

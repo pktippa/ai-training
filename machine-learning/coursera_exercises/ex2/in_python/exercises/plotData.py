@@ -22,10 +22,5 @@ def plot(X, y):
     X2_neg = X2_neg.reshape((m, 1))
     X2_neg = X2_neg[negative_indices]
     plt.scatter(X1_neg, X2_neg, c='y', marker='o')
-    # Labelling the markers
-    plt.legend(['Admitted', 'Not Admitted'])
-    # Labelling Axes
-    plt.xlabel('Exam 1 Score')
-    plt.ylabel('Exam 2 Score')
 
     return plt
