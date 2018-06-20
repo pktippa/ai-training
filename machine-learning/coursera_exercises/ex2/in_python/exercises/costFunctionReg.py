@@ -1,7 +1,7 @@
 import numpy as np
 from .sigmoid import sigm
 
-def getCost(X, y, theta, lambd):
+def getCost(theta, X, y, lambd=1):
     # Calculating matrix multiplication of X and theta
     X_x_theta = np.matmul(X, theta)
     # Getting the sigmoid values for calculating hypothesis function
@@ -26,16 +26,37 @@ def getCost(X, y, theta, lambd):
     # Combining both cost and regularization term
     total_cost = cost_J + cost_reg
 
-    # Calculating Gradient.
-    grad = (1/m) * (np.matmul(X_trans, (h_theta - y)))
+    return total_cost
 
+def getGrad(theta, X, y, lambd=1):
+
+    m, n = X.shape
+    theta = theta.reshape((n, 1))
+    # Calculating matrix multiplication of X and theta
+    X_x_theta = X.dot(theta)
+    # Getting the sigmoid values for calculating hypothesis function
+    h_theta = sigm(X_x_theta)
+    #h_theta = h_theta.reshape((m,1))
+    #print('Grad h_theta shape', h_theta.shape)
+    #print('Y shape', y.shape)
+
+    X_trans = np.transpose(X)
+
+    #print('Grad X_trans shape', X_trans.shape)
+    h_y_diff = h_theta - y
+    #print('Grad h_y_diff shape', h_y_diff.shape)
+    # Calculating Gradient.
+    grad = (1/m) * X_trans.dot(h_y_diff)
+
+    #print('Grad grad shape', grad.shape)
     # grad for regularization term
     funny_mat = np.eye(len(theta))
     funny_mat[0][0] = 0
-    print('funny mat shape', funny_mat.shape)
+    #print('funny mat shape', funny_mat.shape)
     grad_reg = (lambd / m) * (funny_mat.dot(theta))
-
+    #grad_reg = grad_reg.reshape()
     # Combining gradients
     grad_total = grad + grad_reg
-    
-    return total_cost, grad_total
+    #print('Grad Grad _tot shape', grad_total.shape)
+
+    return grad_total

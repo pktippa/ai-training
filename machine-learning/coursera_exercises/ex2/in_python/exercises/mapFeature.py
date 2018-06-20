@@ -1,12 +1,6 @@
 import numpy as np
-def featureMap(X):
+def featureMap(x1, x2, m):
     degree = 6
-    x1 = X[:,0]
-    x2 = X[:,1]
-
-    m = len(x1)
-    x1 = x1.reshape((m, 1))
-    x2 = x2.reshape((m, 1))
     out = np.ones((m, 1))
 
     # Example for instance of features for only power of 3

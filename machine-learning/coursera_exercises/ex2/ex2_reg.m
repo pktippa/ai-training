@@ -116,6 +116,9 @@ options = optimset('GradObj', 'on', 'MaxIter', 400);
 [theta, J, exit_flag] = ...
 	fminunc(@(t)(costFunctionReg(t, X, y, lambda)), initial_theta, options);
 
+fprintf('theta first 5 values after optimization \n');
+fprintf(' %f \n', theta(1:5));
+
 % Plot Boundary
 plotDecisionBoundary(theta, X, y);
 hold on;
