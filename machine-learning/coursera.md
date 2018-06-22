@@ -212,3 +212,15 @@ For regularizing all the parameters of theta (Observe m and n)
 min_theta (1/2m) Sigsum_1_to_m [ (h_theta(x) - y)^2 ] + lambda * Sigsum_1_to_n [ theta_j ^2 ]
 
 last term is regularization term and lambda is regularization parameter.
+
+
+Neural Networks:
+
+If network has s(j) units in layer j and s(j+1) units in layer j+1, then Θ(j) will be of dimension
+s(j+1) × ( s(j) + 1 ) 
+
+Lets say s(j) is x1, x2, x3 and s(j+1) is a1, a2, a3, a4
+For which the bias term x0 adds to s(j) that is the plus one.
+
+For theta(trans) * s(j) = s(j+1) -> theta should have rows as number of s(j+1) and columns
+as (s(j) + 1), here +1 is for bias term.
