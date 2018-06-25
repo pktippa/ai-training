@@ -1,7 +1,7 @@
 import numpy as np
 from .sigmoid import sigm
 
-def getCost(theta, X, y, lambd=1):
+def getCost(theta, X, y, lambd=0.1):
     # Calculating matrix multiplication of X and theta
     X_x_theta = np.matmul(X, theta)
     # Getting the sigmoid values for calculating hypothesis function
@@ -26,7 +26,7 @@ def getCost(theta, X, y, lambd=1):
 
     return total_cost
 
-def getGrad(theta, X, y, lambd=1):
+def getGrad(theta, X, y, lambd=0.1):
 
     m, n = X.shape
     theta = theta.reshape((n, 1))

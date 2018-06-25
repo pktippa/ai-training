@@ -2,14 +2,9 @@ import numpy as np
 
 # Importing from ex2 regularization cost function
 from exercises.costFunctionReg import getCost, getGrad
-'''
-X_org = np.genfromtxt('../X_input.csv', delimiter=',')
-y_org = np.genfromtxt('../y_output.csv', delimiter=',')
+from exercises.oneVsAll import oneva
+from exercises.predictOneVsAll import predict as prdova
 
-y_org = y_org.reshape((len(y_org), 1))
-print('X shape ', X_org.shape, 'el', X_org[0][0])
-print('y shape ', y_org.shape, 'el', y_org[0])
-'''
 # Test case for lrCostFunction
 print('\nTesting lrCostFunction() with regularization')
 
@@ -29,3 +24,27 @@ print('Gradients:\n')
 print(grad, '\n')
 print('Expected gradients:\n')
 print(' 0.146561\n -0.548558\n 0.724722\n 1.398003\n')
+
+X_org = np.genfromtxt('../X_input.csv', delimiter=',')
+y_org = np.genfromtxt('../y_output.csv', delimiter=',')
+
+y_org = y_org.reshape((len(y_org), 1))
+print('X shape ', X_org.shape, 'el', X_org[0][0])
+print('y shape ', y_org.shape, 'el', y_org[0])
+
+num_labels = 10
+lambd = 0.1
+
+all_theta = oneva(X_org, y_org, num_labels, lambd)
+
+p = prdova(all_theta, X_org)
+
+print('shape of predictions ', p.shape)
+print('printing first value to see', p[0])
+p = p.reshape((len(p), 1))
+comparisons = (p == y_org)
+
+accuracy_ = np.zeros((len(y_org),1))
+accuracy_[comparisons] = 1
+
+print('Accuracy with oneVsAll method', np.mean(accuracy_))
