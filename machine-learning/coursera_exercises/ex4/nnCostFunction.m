@@ -95,6 +95,16 @@ for iter = 1:m
     J += (-1/m) * (log_h(iter, :) * temp + log_1_h(iter, :) * (1-temp));
 end
 
+% regularization cost 
+% we dont have to regularize the first term theta 0
+
+temp1 = Theta1;
+temp1(:, 1) = 0;
+
+temp2 = Theta2;
+temp2(:, 1) = 0;
+
+J += (lambda / ( 2 * m ) ) * (sum( sum( temp1 .* temp1 ) ) + sum ( sum( temp2 .* temp2 ) ));
 
 % -------------------------------------------------------------
 
@@ -103,5 +113,5 @@ end
 % Unroll gradients
 grad = [Theta1_grad(:) ; Theta2_grad(:)];
 
-fprintf('Size %f', size(J));
+%fprintf('Size %f', size(J));
 end
