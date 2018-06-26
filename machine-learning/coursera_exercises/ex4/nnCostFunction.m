@@ -62,22 +62,38 @@ Theta2_grad = zeros(size(Theta2));
 %               and Theta2_grad from Part 2.
 %
 
+% First layer
+a1 = [ones(m, 1) X];
+z1 = a1 * Theta1';
+h1 = sigmoid(z1);
 
+% Second Layer
+a2 = [ones(m, 1) h1];
+z2 = a2 * Theta2';
+h2 = sigmoid(z2);
 
+log_h = log(h2);
+log_1_h = log( 1 - h2 );
 
+term = zeros(num_labels, 1);
 
+%fprintf('y _ 1');
+%y(1)
 
-
-
-
-
-
-
-
-
-
-
-
+%fprintf('h_theta _ 1');
+%h2(1, :)
+for iter = 1:m
+    % Copying all zeros vector
+    temp = term;
+    % setting the corresponding class value to 1, and rest all being 0
+    temp(y(iter)) = 1;
+    % Summing up the cost 
+    % h is of shape 5000, 10 -> 5000 rows with 10 columns,
+    % here 10 columns corresponding to 10 classes
+    % so h(i, :) is a row vector for Ex: value 10 -> [0.01  0.01  .... 0.99]
+    % this we need to multiply with y column vector -> [0 0 0 ... 1]
+    J += (-1/m) * (log_h(iter, :) * temp + log_1_h(iter, :) * (1-temp));
+end
 
 
 % -------------------------------------------------------------
@@ -87,5 +103,5 @@ Theta2_grad = zeros(size(Theta2));
 % Unroll gradients
 grad = [Theta1_grad(:) ; Theta2_grad(:)];
 
-
+fprintf('Size %f', size(J));
 end
