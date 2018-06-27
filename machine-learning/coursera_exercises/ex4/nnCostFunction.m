@@ -140,6 +140,13 @@ end
 
 Theta2_grad = (1/m) * B_delta_2_sum_term;
 Theta1_grad = (1/m) * B_delta_1_sum_term;
+
+% For Adding regularization term
+Theta1(:, 1) = 0;
+Theta2(:, 1) = 0;
+
+Theta1_grad += (lambda / m) * Theta1;
+Theta2_grad += (lambda / m) * Theta2;
 % -------------------------------------------------------------
 
 % =========================================================================
