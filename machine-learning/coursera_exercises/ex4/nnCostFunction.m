@@ -30,6 +30,9 @@ J = 0;
 Theta1_grad = zeros(size(Theta1));
 Theta2_grad = zeros(size(Theta2));
 
+B_delta_1_sum_term = Theta1_grad;
+B_delta_2_sum_term = Theta2_grad;
+
 % ====================== YOUR CODE HERE ======================
 % Instructions: You should complete the code by working through the
 %               following parts.
@@ -105,7 +108,38 @@ temp2 = Theta2;
 temp2(:, 1) = 0;
 
 J += (lambda / ( 2 * m ) ) * (sum( sum( temp1 .* temp1 ) ) + sum ( sum( temp2 .* temp2 ) ));
+classes = [1:num_labels];
+for i = 1:m
+    % Getting ith training example
+    x1 = X(i, :); % (1, 400)
+    %fprintf('%f', size(x1));
+    % Getting first activation example
+    a1 = [1 x1]; % (1, 401)
+    z1 = a1 * Theta1'; % (1, 25)
+    h1 = sigmoid(z1); % (1, 25)
+    
+    % For third layer
+    a2 = [1 h1]; % (1, 26)
+    z2 = a2 * Theta2'; % (1, 10)
+    h2 = sigmoid(z2); % (1, 10)
 
+    %fprintf('\n y(i) %f', size(y(i)));
+    %fprintf('\n h2 %f', size(h2));
+    %(classes == y(i))
+    s_delta_3 = h2 - ( classes == y(i) ); % (1, 10)
+    %fprintf('\n%f', size(s_delta_3));
+    s_delta_2 = ( s_delta_3 * Theta2 ) .* sigmoidGradient( [1 z1] ); % (1, 26)
+
+    % Removing the first element in vector that is s_delta_0_2
+    s_delta_2 = s_delta_2(2:end); % (1, 25)
+
+    B_delta_2_sum_term += s_delta_3' * a2;  % (10, 1) X (1, 26) = (10, 26)
+    B_delta_1_sum_term += s_delta_2' * a1;  % (25, 1) X (1, 401) = (25, 401)
+
+end
+
+Theta2_grad = (1/m) * B_delta_2_sum_term;
+Theta1_grad = (1/m) * B_delta_1_sum_term;
 % -------------------------------------------------------------
 
 % =========================================================================
