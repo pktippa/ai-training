@@ -6,7 +6,7 @@ hidden_layer_size = 25;   # 25 hidden units
 num_labels = 10;          # 10 labels, from 1 to 10   
                           # (note that we have mapped "0" to label 10)
 # =========== Part 1: Loading data ===============
-'''
+
 X_org = np.genfromtxt('../../ex3/X_input.csv', delimiter=',')
 y_org = np.genfromtxt('../../ex3/y_output.csv', delimiter=',')
 
@@ -27,18 +27,18 @@ print('Loaded Theta2 shape', Theta2.shape)
 
 # unrolling parameters
 # First transpose, then normal flatten
-tmpTheta1 = Theta1.flatten('F')
+tmpTheta1 = Theta1.flatten()
 tmpTheta1 = tmpTheta1.reshape((len(tmpTheta1), 1))
 print('Unrolling Theta1 shape', tmpTheta1.shape)
 
-tmpTheta2 = Theta2.flatten('F')
+tmpTheta2 = Theta2.flatten()
 tmpTheta2 = tmpTheta2.reshape((len(tmpTheta2), 1))
 print('Unrolling Theta2 shape', tmpTheta2.shape)
 
 nn_params = np.concatenate((tmpTheta1, tmpTheta2), axis=0)
-'''
-# ================ Part 3: Compute Cost (Feedforward) ================
 
+# ================ Part 3: Compute Cost (Feedforward) ================
+'''
 lambd = 0
 theta1 = np.arange(1,7).reshape((2, 3))
 print('Original t1', theta1)
@@ -51,3 +51,8 @@ tmpTheta2 = theta2.flatten()
 tmpTheta2 = tmpTheta2.reshape((len(tmpTheta2), 1))
 nn_params = np.concatenate((tmpTheta1, tmpTheta2), axis=0)
 cost = getCost(nn_params, 2, 2, 4, 1, 1, lambd)
+'''
+lambd = 0 # With out regularization
+#print('nn_params 656', nn_params[655], '')
+cost = getCost(nn_params, input_layer_size, hidden_layer_size, num_labels, X_org, y_org, lambd)
+print('Cost at parameters (loaded from ex4weights):', cost, ' value should be 0.287629')

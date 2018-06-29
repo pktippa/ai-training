@@ -224,3 +224,19 @@ For which the bias term x0 adds to s(j) that is the plus one.
 
 For theta(trans) * s(j) = s(j+1) -> theta should have rows as number of s(j+1) and columns
 as (s(j) + 1), here +1 is for bias term.
+
+Cost function for neural networks
+
+J is a real value or scalar BUT NOT a vector
+let K be number of output classes
+m is anyway training examples
+L be number of layers
+
+J = - (1/m) ( sigsum_m( sigsum_K( yk * log(hk) + (1-y) * (1 - log(hk))) )) 
+            + (lambda/2m) ( sigsum_L( sigsum_K( sigsum_m(theta_^2) ) ) )
+
+
+
+Symmetry breaking:
+
+If we initialize theta values with 0, it would get into symmetry.
