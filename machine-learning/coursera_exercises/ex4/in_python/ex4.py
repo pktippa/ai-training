@@ -1,9 +1,11 @@
 import numpy as np
 from exercises.nnCostFunction import getCost
+from exercises.sigmoid import sigmoidGradient
+from exercises.randomInitialize import rand
 
-input_layer_size  = 400;  # 20x20 Input Images of Digits
-hidden_layer_size = 25;   # 25 hidden units
-num_labels = 10;          # 10 labels, from 1 to 10   
+input_layer_size  = 400  # 20x20 Input Images of Digits
+hidden_layer_size = 25   # 25 hidden units
+num_labels = 10          # 10 labels, from 1 to 10   
                           # (note that we have mapped "0" to label 10)
 # =========== Part 1: Loading data ===============
 
@@ -66,3 +68,13 @@ cost = getCost(np.copy(nn_params), input_layer_size, hidden_layer_size, num_labe
 
 # After regularization cost
 print('Cost at parameters (loaded from ex4weights):', cost, '\n(this value should be about 0.383770)\n')
+
+# Part 5 Evaluating Sigmoid Gradient
+
+tmpArray = np.array([-1, -0.5, 0, 0.5, 1])
+sigmGResults = sigmoidGradient(tmpArray)
+
+print('Sigmoid Gradient Results', sigmGResults)
+
+# Part 6 Random Initialization
+#initial_Theta1 = rand()
