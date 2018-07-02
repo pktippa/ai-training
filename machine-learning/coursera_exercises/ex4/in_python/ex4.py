@@ -54,5 +54,15 @@ cost = getCost(nn_params, 2, 2, 4, 1, 1, lambd)
 '''
 lambd = 0 # With out regularization
 #print('nn_params 656', nn_params[655], '')
-cost = getCost(nn_params, input_layer_size, hidden_layer_size, num_labels, X_org, y_org, lambd)
+cost = getCost(np.copy(nn_params), input_layer_size, hidden_layer_size, num_labels, X_org, y_org, lambd)
 print('Cost at parameters (loaded from ex4weights):', cost, ' value should be 0.287629')
+
+# Implementing Regularization
+print('\nChecking Cost Function (w/ Regularization) ... \n')
+
+lambd = 1 # with regularization of lambda = 1
+
+cost = getCost(np.copy(nn_params), input_layer_size, hidden_layer_size, num_labels, X_org, y_org, lambd)
+
+# After regularization cost
+print('Cost at parameters (loaded from ex4weights):', cost, '\n(this value should be about 0.383770)\n')

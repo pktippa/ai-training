@@ -96,9 +96,9 @@ for iter = 1:m
     % so h(i, :) is a row vector for Ex: value 10 -> [0.01  0.01  .... 0.99]
     % this we need to multiply with y column vector -> [0 0 0 ... 1]
     J += (-1/m) * (log_h(iter, :) * temp + log_1_h(iter, :) * (1-temp));
-    if iter < 10
-        J
-    end
+    %if iter < 10
+    %    J
+    %end
 end
 
 % regularization cost 
