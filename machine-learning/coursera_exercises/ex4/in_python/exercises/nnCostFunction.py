@@ -68,5 +68,30 @@ def getCost(nn_params, input_layer_size, hidden_layer_size, num_labels, X, y, la
     J += J_reg
     return J
 
-def getGrad():
+def getGrad(nn_params, input_layer_size, hidden_layer_size, num_labels, X, y, lambd):
+    '''
+    Returns the partial derivative or Gradient
+    '''
+    m, n = X.shape
+
+    # Reshape nn_params back into the parameters Theta1 and Theta2, the weight matrices
+    Theta1 = nn_params[0:( ( input_layer_size + 1 ) * hidden_layer_size),]
+    Theta1 = Theta1.reshape((hidden_layer_size, input_layer_size + 1))
+    Theta2 = nn_params[( ( input_layer_size + 1 ) * hidden_layer_size):,]
+    Theta2 = Theta2.reshape((num_labels, hidden_layer_size + 1))
+
+    ones = np.ones((1 ,1))
+    for i in range(m):
+        # First Layer#
+        x1 = X[i, :] # (1, 400)
+        
+        # Second Layer
+        a1 = np.concatenate((ones, x1), axis=1) # (1, 401)
+        z1 = a1.dot(Theta1.T) # (1, 401) X (401, 25) = (1, 25)
+        h1 = sigm(z1) # (1, 25)
+
+        # Third Layer
+        a2 = np.concatenate((ones, h1), axis=1) # (1, 26)
+        z2 = a2.dot(Theta2.T) # (1, 26) X (26, 10) = (1, 10)
+        h2 = sigm(z2) # (1, 10)
     pass

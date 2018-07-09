@@ -4,4 +4,4 @@ def rand(m, n):
     
     epsolon = 0.12
 
-    return ( ( np.random.rand(m,n) * 2 * epsolon ) - epsolon )
+    return ( ( np.random.rand(m, 1 + n) * 2 * epsolon ) - epsolon )

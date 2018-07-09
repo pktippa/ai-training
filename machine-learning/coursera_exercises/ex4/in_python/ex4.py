@@ -77,4 +77,6 @@ sigmGResults = sigmoidGradient(tmpArray)
 print('Sigmoid Gradient Results', sigmGResults)
 
 # Part 6 Random Initialization
-#initial_Theta1 = rand()
+initial_Theta1 = rand(input_layer_size, hidden_layer_size)
+initial_Theta2 = rand(hidden_layer_size, num_labels)
+
